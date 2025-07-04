@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Konsultasi Bisnis Jualan Kita - Panduan profesional untuk pengembangan UMKM di platform Jualan Kita">
-    <meta name="keywords" content="jualan kita, konsultan bisnis, umkm, pemasaran digital, toko online">
-    <title>Owner Jualan Kita | Ahli Pengembangan UMKM Digital</title>
+    <meta name="description" content="Testimoni Klien Jualan Kita - Bukti nyata kesuksesan bisnis UMKM di platform Jualan Kita">
+    <meta name="keywords" content="jualan kita, testimoni, umkm, bisnis sukses, toko online">
+    <title>Testimoni Jualan Kita | Bukti Nyata Kesuksesan Bisnis</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" type="image/png">
@@ -333,287 +333,6 @@
             visibility: visible;
         }
 
-        /* About Consultant */
-        .about-consultant {
-            background-color: white;
-        }
-
-        .consultant-profile {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .consultant-image-container {
-            width: 100%;
-            max-width: 420px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-            transition: var(--transition);
-            border: 8px solid white;
-            aspect-ratio: 3/4;
-        }
-
-        .consultant-image-container:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .consultant-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .consultant-image-container:hover .consultant-image {
-            transform: scale(1.05);
-        }
-
-        .consultant-details {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .consultant-name {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-            line-height: 1.2;
-            position: relative;
-            display: inline-block;
-        }
-
-        .consultant-name::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 2px;
-        }
-
-        .consultant-specialty {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: block;
-            font-size: 1.3rem;
-        }
-
-        .consultant-bio {
-            margin-bottom: 2.5rem;
-            color: var(--text);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .consultant-bio p {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Services Section */
-        .services {
-            background-color: var(--light);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 2.5rem;
-            color: var(--dark);
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary), #f39c12);
-            margin: 1.5rem auto 0;
-            border-radius: 5px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid var(--primary);
-            text-align: center;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), #f39c12);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            width: 100px;
-            height: 100px;
-            background-color: rgba(230, 126, 34, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 2.5rem;
-            color: var(--accent);
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon {
-            background-color: rgba(230, 126, 34, 0.2);
-            transform: scale(1.1) rotate(10deg);
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        /* Jualan Kita Section */
-        .jualan-kita {
-            background-color: white;
-        }
-
-        .jk-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .jk-content p {
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .jk-content ul {
-            text-align: left;
-            max-width: 600px;
-            margin: 3rem auto;
-            list-style-position: inside;
-            padding-left: 0;
-        }
-
-        .jk-content li {
-            margin-bottom: 1.2rem;
-            position: relative;
-            padding-left: 2rem;
-            list-style-type: none;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        .jk-content li::before {
-            content: "▹";
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Video Gallery Section */
-        .video-gallery {
-            background-color: var(--light);
-            padding: 6rem 0;
-        }
-
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .video-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .video-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .video-info {
-            padding: 1.5rem;
-        }
-
-        .video-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-            font-weight: 600;
-        }
-
-        .video-desc {
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
         /* Testimonials */
         .testimonials {
             background-color: var(--light);
@@ -692,17 +411,18 @@
             border: 3px solid rgba(230, 126, 34, 0.2);
             transition: var(--transition);
             flex-shrink: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: bold;
         }
 
         .testimonial-card:hover .testimonial-avatar {
             border-color: var(--primary);
             transform: scale(1.05);
-        }
-
-        .testimonial-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .author-info h4 {
@@ -944,31 +664,6 @@
             font-size: 1.05rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary);
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
-        }
-
         .footer-col h3 {
             font-size: 1.4rem;
             margin-bottom: 2rem;
@@ -1130,11 +825,7 @@
                 font-size: 2rem;
             }
             
-            .consultant-name {
-                font-size: 2.2rem;
-            }
-            
-            .services-grid, .testimonial-grid, .video-container {
+            .testimonial-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
             
@@ -1169,20 +860,6 @@
             .section-title {
                 font-size: 1.8rem;
             }
-
-            .consultant-profile {
-                flex-direction: column;
-                text-align: center;
-                gap: 3rem;
-            }
-
-            .consultant-details {
-                text-align: left;
-            }
-
-            .consultant-name {
-                font-size: 2rem;
-            }
             
             .footer-col {
                 text-align: center;
@@ -1196,10 +873,6 @@
             .footer-col h3::after {
                 left: 50%;
                 transform: translateX(-50%);
-            }
-            
-            .social-links {
-                justify-content: center;
             }
             
             .whatsapp-float {
@@ -1251,15 +924,11 @@
                 margin-bottom: 3rem;
             }
             
-            .consultant-name {
-                font-size: 1.8rem;
-            }
-            
             .service-card, .testimonial-card, .contact-info, .contact-form, .testimonial-form-container {
                 padding: 1.5rem;
             }
             
-            .services-grid, .testimonial-grid, .video-container {
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1321,14 +990,11 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">
                 <img src="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" alt="Jualan Kita Logo">
-                <span>Owner Jualan Kita</span>
+                <span>Testimoni Jualan Kita</span>
             </a>
             
             <div class="nav-links">
                 <a href="#home" class="active">Beranda</a>
-                <a href="#about">Tentang</a>
-                <a href="#services">Layanan</a>
-                <a href="#videos">Video</a>
                 <a href="#testimonials">Testimoni</a>
                 <a href="#contact">Kontak</a>
             </div>
@@ -1342,9 +1008,6 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home">Beranda</a>
-        <a href="#about">Tentang Owner</a>
-        <a href="#services">Layanan</a>
-        <a href="#videos">Video</a>
         <a href="#testimonials">Testimoni</a>
         <a href="#contact">Kontak</a>
     </div>
@@ -1356,151 +1019,38 @@
             <div class="logo">
                 <img src="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" alt="Jualan Kita Logo">
                 <div class="logo-text">
-                    <span class="logo-main">Owner Jualan Kita</span>
-                    <span class="logo-sub">Update Bisnis UMKM Anda Bersama Lentera Karya</span>
+                    <span class="logo-main">Testimoni Jualan Kita</span>
+                    <span class="logo-sub">Bukti Nyata Kesuksesan Bisnis UMKM Digital</span>
                 </div>
             </div>
-            <p class="tagline fade-in">Panduan Profesional untuk Pengembangan UMKM di Platform Jualan Kita. Bersama kita wujudkan mimpi bisnis Anda dengan strategi yang tepat dan terukur.</p>
+            <p class="tagline fade-in">Lihat bagaimana ratusan pelaku UMKM telah mengubah bisnis mereka dengan platform Jualan Kita. Bergabunglah dengan komunitas yang terus berkembang ini.</p>
             
             <div class="header-buttons fade-in delay-1">
-                <a href="#services" class="btn btn-primary">
-                    <i class="fas fa-lightbulb"></i> Layanan Kami
+                <a href="#testimonials" class="btn btn-primary">
+                    <i class="fas fa-star"></i> Lihat Testimoni
                 </a>
-                <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-phone-alt"></i> Konsultasi Sekarang
+                <a href="#testimonial-form" class="btn btn-outline">
+                    <i class="fas fa-pen"></i> Beri Testimoni
                 </a>
             </div>
         </div>
     </header>
     
-    <!-- About Consultant -->
-    <section class="about-consultant" id="about">
-        <div class="container">
-            <h2 class="section-title fade-in">Tentang Owner</h2>
-            <div class="consultant-profile">
-                <div class="consultant-image-container fade-in">
-                    <img src="https://raw.githubusercontent.com/LenteraKarya/bisnis/main/assets/images/foto-owner.jpeg" alt="Owner Jualan Kita" class="consultant-image">
-                </div>
-                <div class="consultant-details fade-in delay-1">
-                    <h3 class="consultant-name">CENDHANU</h3>
-                    <span class="consultant-specialty">Founder Marketplace Jualan Kita</span>
-                    <div class="consultant-bio">
-                        <p>Saya adalah seorang putra daerah kelahiran Situbondo, lulusan SMK IBRAHIMY SITUBONDO, yang kini berusia 36 tahun dan berprofesi sebagai tenaga honorer. Meski berlatar belakang pendidikan sederhana, saya memiliki mimpi besar: menjadi pengusaha yang tumbuh dari nol dan memberi manfaat seluas-luasnya bagi masyarakat.</p>
-                        <p>Berangkat dari visi tersebut, saya membangun Lentera Karya sebuah platform digital yang dirancang sebagai wadah promosi, publikasi, dan jaringan bisnis bagi para pelaku UMKM, khususnya di Situbondo. Platform ini bukan hanya untuk usaha saya sendiri, tetapi terbuka bagi semua pengusaha kecil dan menengah yang ingin berkembang bersama.</p>
-                        <p>Saya terinspirasi oleh semangat dan slogan kepemimpinan Bupati Situbondo saat ini, Mas Rio : "Situbondo Naik Kelas." Inilah yang menjadi bahan bakar visi saya mendorong UMKM lokal agar mampu naik kelas dan bersaing secara sehat dalam ekosistem digital yang inklusif dan berdaya saing.</p>
-                        <p>Saya percaya bahwa perubahan besar selalu dimulai dari langkah sederhana. Lentera Karya adalah langkah awal saya menuju cita-cita besar itu, dan saya berharap platform ini akan menjadi ruang kolaboratif yang mendukung pertumbuhan UMKM dari akar rumput hingga tingkat nasional.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title fade-in">Layanan Konsultasi</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <h3 class="service-title">Setup Toko Profesional</h3>
-                    <p>Bimbingan lengkap mulai dari pendaftaran, setup toko, hingga pengaturan pembayaran dan pengiriman di platform Jualan Kita untuk memastikan toko Anda tampil profesional sejak awal.</p>
-                </div>
-                <div class="service-card fade-in delay-1">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">Strategi Penjualan</h3>
-                    <p>Teknik meningkatkan penjualan melalui optimasi produk, pricing strategy yang kompetitif, dan promosi efektif di Jualan Kita untuk memaksimalkan keuntungan bisnis Anda.</p>
-                </div>
-                <div class="service-card fade-in delay-2">
-                    <div class="service-icon">
-                        <i class="fas fa-camera-retro"></i>
-                    </div>
-                    <h3 class="service-title">Optimasi Produk</h3>
-                    <p>Panduan fotografi produk profesional, penulisan deskripsi yang menjual, dan pengaturan katalog yang optimal untuk meningkatkan daya tarik produk Anda di Jualan Kita.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Video Gallery Section -->
-    <section class="video-gallery" id="videos">
-        <div class="container">
-            <h2 class="section-title fade-in">Video Tutorial</h2>
-            <p class="fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Tonton video tutorial kami untuk mempelajari cara memaksimalkan penggunaan platform Jualan Kita untuk bisnis Anda.</p>
-            
-            <div class="video-container">
-                <div class="video-card fade-in">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/SFn9-dx0Zko" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Panduan Dasar Jualan Kita</h3>
-                        <p class="video-desc">Pelajari cara memulai toko online Anda di platform Jualan Kita dari awal hingga siap berjualan.</p>
-                    </div>
-                </div>
-                
-                <div class="video-card fade-in delay-1">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/3x5nXPM88-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Strategi Promosi Produk</h3>
-                        <p class="video-desc">Temukan strategi promosi efektif untuk meningkatkan penjualan di Jualan Kita.</p>
-                    </div>
-                </div>
-                
-                <div class="video-card fade-in delay-2">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Optimasi Katalog Produk</h3>
-                        <p class="video-desc">Pelajari cara mengoptimalkan katalog produk Anda untuk meningkatkan konversi penjualan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Jualan Kita Section -->
-    <section class="jualan-kita" id="jualankita">
-        <div class="container">
-            <h2 class="section-title fade-in">Tentang Jualan Kita</h2>
-            <div class="jk-content">
-                <p class="fade-in">Jualan Kita adalah platform e-commerce yang dirancang khusus untuk UMKM Indonesia dengan fitur-fitur lengkap untuk memulai dan mengembangkan bisnis online dengan mudah dan efektif.</p>
-                
-                <p class="fade-in delay-1">Sebagai owner dan konsultan ahli Jualan Kita, saya dapat membantu Anda:</p>
-                <ul class="fade-in delay-2">
-                    <li>Memahami semua fitur dan keunggulan platform Jualan Kita secara mendalam</li>
-                    <li>Mengoptimalkan penggunaan platform untuk bisnis Anda dengan strategi khusus</li>
-                    <li>Mengembangkan strategi penjualan yang disesuaikan dengan produk dan target pasar Anda</li>
-                    <li>Menganalisis performa toko berbasis digital</li>
-                    <li>Membangun branding yang kuat untuk produk Anda di platform Jualan Kita</li>
-                </ul>
-                
-                <a href="https://lenterakarya.github.io/jualan-kita/" class="btn btn-primary fade-in delay-3" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> Kunjungi Website Jualan Kita
-                </a>
-            </div>
-        </div>
-    </section>
-    
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <h2 class="section-title fade-in">Testimoni Klien</h2>
+            <p class="fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Dengarkan pengalaman nyata dari pelaku UMKM yang telah sukses menggunakan platform Jualan Kita untuk mengembangkan bisnis mereka.</p>
+            
             <div class="testimonial-grid">
                 <div class="testimonial-card fade-in">
                     <p class="testimonial-text">
-                        "Sebagai pemula di Jualan Kita, bimbingan dari Owner sangat membantu. Toko saya yang awalnya sepi sekarang bisa mencapai 50 pesanan per minggu. Strategi pricing dan promosinya benar-benar efektif!"
+                        "Sebagai pemula di Jualan Kita, platform ini sangat membantu. Toko saya yang awalnya sepi sekarang bisa mencapai 50 pesanan per minggu. Fitur-fitur yang disediakan benar-benar efektif untuk bisnis kecil seperti saya!"
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Siti Rahma">
+                            SR
                         </div>
                         <div class="author-info">
                             <h4>Siti Rahma</h4>
@@ -1511,12 +1061,12 @@
                 
                 <div class="testimonial-card fade-in delay-1">
                     <p class="testimonial-text">
-                        "Pelatihan optimasi produk dari Owner Jualan Kita sangat detail. Foto produk saya sekarang terlihat profesional dan konversi penjualan meningkat 2x lipat dalam sebulan. Recommended banget!"
+                        "Saya sangat terkesan dengan kemudahan penggunaan Jualan Kita. Dalam waktu 3 bulan, omzet toko saya naik 300%. Platform ini benar-benar membantu saya fokus mengembangkan bisnis tanpa harus pusing dengan teknis."
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Budi Santoso">
+                            BS
                         </div>
                         <div class="author-info">
                             <h4>Budi Santoso</h4>
@@ -1527,12 +1077,12 @@
                 
                 <div class="testimonial-card fade-in delay-2">
                     <p class="testimonial-text">
-                        "Saya sangat terkesan dengan pengetahuan mendalam Owner tentang platform Jualan Kita. Berkat strateginya, omzet toko saya naik 300% dalam 3 bulan. Kini saya bisa fokus mengembangkan bisnis."
+                        "Dukungan dan fitur Jualan Kita luar biasa! Saya bisa mengelola inventaris, pesanan, dan pelanggan dengan mudah dari satu dashboard. Sekarang saya bisa lebih fokus pada pengembangan produk daripada administrasi."
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dewi Lestari">
+                            DL
                         </div>
                         <div class="author-info">
                             <h4>Dewi Lestari</h4>
@@ -1543,8 +1093,8 @@
             </div>
             
             <!-- Testimonial Form -->
-            <div class="testimonial-form-container fade-in delay-3">
-                <h3>Tambah Testimoni Anda</h3>
+            <div class="testimonial-form-container fade-in delay-3" id="testimonial-form">
+                <h3>Bagikan Pengalaman Anda</h3>
                 <form class="testimonial-form" id="testimonialForm">
                     <div class="form-row">
                         <div class="form-group">
@@ -1555,6 +1105,14 @@
                             <label for="testimonial-business">Jenis Bisnis</label>
                             <input type="text" id="testimonial-business" required placeholder="Jenis bisnis Anda">
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonial-phone">Nomor WhatsApp</label>
+                        <input type="tel" id="testimonial-phone" required placeholder="Nomor WhatsApp aktif">
+                    </div>
+                    <div class="form-group">
+                        <label for="testimonial-email">Alamat Email</label>
+                        <input type="email" id="testimonial-email" required placeholder="Alamat email aktif">
                     </div>
                     <div class="form-group">
                         <label for="testimonial-rating">Rating</label>
@@ -1569,7 +1127,7 @@
                     </div>
                     <div class="form-group">
                         <label for="testimonial-message">Testimoni Anda</label>
-                        <textarea id="testimonial-message" required placeholder="Bagikan pengalaman Anda menggunakan layanan kami"></textarea>
+                        <textarea id="testimonial-message" required placeholder="Bagikan pengalaman Anda menggunakan Jualan Kita"></textarea>
                     </div>
                     <button type="submit" class="submit-btn">
                         <i class="fas fa-paper-plane"></i> Kirim Testimoni
@@ -1604,7 +1162,7 @@
                         <i class="fas fa-envelope contact-icon"></i>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>konsultasi@lenterakarya.com</p>
+                            <p>testimoni@jualankita.com</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -1630,9 +1188,8 @@
                             <label for="subject">Subjek</label>
                             <select id="subject" required>
                                 <option value="" disabled selected>Pilih subjek pesan Anda</option>
-                                <option value="konsultasi">Konsultasi Bisnis</option>
-                                <option value="jualankita">Pertanyaan Jualan Kita</option>
-                                <option value="pelatihan">Pelatihan & Workshop</option>
+                                <option value="testimoni">Pertanyaan Tentang Testimoni</option>
+                                <option value="platform">Pertanyaan Platform Jualan Kita</option>
                                 <option value="lainnya">Lainnya</option>
                             </select>
                         </div>
@@ -1656,24 +1213,15 @@
                 <div class="footer-col footer-about fade-in">
                     <a href="#" class="footer-logo">
                         <img src="https://raw.githubusercontent.com/LenteraKarya/jualan-kita/main/assets/images/logo-jualan-kita.png" alt="Jualan Kita Logo">
-                        <span>Owner Jualan Kita</span>
+                        <span>Testimoni Jualan Kita</span>
                     </a>
-                    <p>Layanan konsultasi profesional untuk membantu UMKM berkembang di platform Jualan Kita dengan strategi yang terukur dan efektif, langsung dari pemilik platform.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6287865614222" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <p>Platform untuk berbagi pengalaman nyata menggunakan Jualan Kita dalam mengembangkan bisnis UMKM digital.</p>
                 </div>
                 
                 <div class="footer-col fade-in delay-1">
                     <h3>Tautan Cepat</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-chevron-right"></i><a href="https://lenterakarya.github.io/jualan-kita/" target="_blank">Beranda</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="#about">Tentang Owner</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="#services">Layanan</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="#videos">Video</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#home">Beranda</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="#testimonials">Testimoni</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="#contact">Kontak</a></li>
                     </ul>
@@ -1683,7 +1231,7 @@
                     <h3>Hubungi Kami</h3>
                     <div class="footer-links">
                         <div class="contact-info-item"><i class="fas fa-phone"></i> +62 878 6561 4222</div>
-                        <div class="contact-info-item"><i class="fas fa-envelope"></i> konsultasi@lenterakarya.com</div>
+                        <div class="contact-info-item"><i class="fas fa-envelope"></i> testimoni@jualankita.com</div>
                         <div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Situbondo, Jawa Timur</div>
                         <div class="contact-info-item"><i class="fas fa-clock"></i> Senin-Sabtu, 08.00-17.00</div>
                     </div>
@@ -1691,7 +1239,7 @@
             </div>
             
             <div class="copyright fade-in delay-3">
-                &copy; 2025 Owner Jualan Kita. Semua hak dilindungi. | Dibangun dengan <i class="fas fa-heart" style="color: #e74c3c;"></i> untuk UMKM Indonesia
+                &copy; 2025 Testimoni Jualan Kita. Semua hak dilindungi. | Dibangun dengan <i class="fas fa-heart" style="color: #e74c3c;"></i> untuk UMKM Indonesia
             </div>
         </div>
     </footer>
@@ -1758,18 +1306,38 @@
             });
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Testimonial form submission
+        document.getElementById('testimonialForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simulate form submission
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
             submitBtn.disabled = true;
             
-            // Simulate API call
+            // Collect form data
+            const formData = {
+                name: document.getElementById('testimonial-name').value,
+                business: document.getElementById('testimonial-business').value,
+                phone: document.getElementById('testimonial-phone').value,
+                email: document.getElementById('testimonial-email').value,
+                rating: document.getElementById('testimonial-rating').value,
+                message: document.getElementById('testimonial-message').value
+            };
+            
+            // Prepare WhatsApp message
+            const whatsappMessage = `Halo, saya ${formData.name} (${formData.business}) ingin memberikan testimoni untuk Jualan Kita:\n\nRating: ${formData.rating}\nTestimoni: ${formData.message}\n\nEmail: ${formData.email}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Prepare email subject and body
+            const emailSubject = `Testimoni Baru dari ${formData.name}`;
+            const emailBody = `Nama: ${formData.name}\nBisnis: ${formData.business}\nTelepon: ${formData.phone}\nEmail: ${formData.email}\nRating: ${formData.rating}\n\nTestimoni:\n${formData.message}`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/6287865614222?text=${encodedMessage}`, '_blank');
+            
+            // Simulate email sending (in a real scenario, you would use an API)
             setTimeout(() => {
                 submitBtn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
                 
@@ -1785,7 +1353,7 @@
                 successAlert.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
                 successAlert.style.zIndex = '1000';
                 successAlert.style.animation = 'fadeIn 0.5s ease';
-                successAlert.innerHTML = '<i class="fas fa-check-circle"></i> Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.';
+                successAlert.innerHTML = '<i class="fas fa-check-circle"></i> Testimoni Anda telah terkirim! Terima kasih atas masukan Anda.';
                 
                 document.body.appendChild(successAlert);
                 
@@ -1806,8 +1374,8 @@
             }, 1500);
         });
 
-        // Testimonial form submission
-        document.getElementById('testimonialForm').addEventListener('submit', function(e) {
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitBtn = this.querySelector('button[type="submit"]');
@@ -1816,7 +1384,7 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
             submitBtn.disabled = true;
             
-            // Simulate API call
+            // Simulate form submission
             setTimeout(() => {
                 submitBtn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
                 
@@ -1832,7 +1400,7 @@
                 successAlert.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
                 successAlert.style.zIndex = '1000';
                 successAlert.style.animation = 'fadeIn 0.5s ease';
-                successAlert.innerHTML = '<i class="fas fa-check-circle"></i> Testimoni Anda telah terkirim! Terima kasih atas masukan Anda.';
+                successAlert.innerHTML = '<i class="fas fa-check-circle"></i> Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.';
                 
                 document.body.appendChild(successAlert);
                 
