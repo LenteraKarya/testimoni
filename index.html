@@ -338,6 +338,34 @@
             background-color: var(--light);
         }
 
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--primary);
+            border-radius: 5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -417,7 +445,6 @@
             justify-content: center;
             color: var(--primary);
             font-size: 2rem;
-            font-weight: bold;
         }
 
         .testimonial-card:hover .testimonial-avatar {
@@ -1040,53 +1067,430 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <h2 class="section-title fade-in">Testimoni Klien</h2>
-            <p class="fade-in" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Dengarkan pengalaman nyata dari pelaku UMKM yang telah sukses menggunakan platform Jualan Kita untuk mengembangkan bisnis mereka.</p>
+            <p class="section-subtitle fade-in">Dengarkan pengalaman nyata dari pelaku UMKM yang telah sukses menggunakan platform Jualan Kita untuk mengembangkan bisnis mereka.</p>
             
             <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
                 <div class="testimonial-card fade-in">
                     <p class="testimonial-text">
-                        "Sebagai pemula di Jualan Kita, platform ini sangat membantu. Toko saya yang awalnya sepi sekarang bisa mencapai 50 pesanan per minggu. Fitur-fitur yang disediakan benar-benar efektif untuk bisnis kecil seperti saya!"
+                        "Jasa layanan promosi daganganku di platfom lentera karya (jual kita) ini membuat saya terbantukan. Sehingga pelanggan mudah mengakses dan mendapatkan informasi dan transaksi"
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            SR
+                            <i class="fas fa-store"></i>
                         </div>
                         <div class="author-info">
-                            <h4>Siti Rahma</h4>
-                            <p>Pemilik Kedai Kue Tradisional</p>
+                            <h4>Budi Hariyanto</h4>
+                            <p>UMKM - Situbondo</p>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Testimonial 2 -->
                 <div class="testimonial-card fade-in delay-1">
                     <p class="testimonial-text">
-                        "Saya sangat terkesan dengan kemudahan penggunaan Jualan Kita. Dalam waktu 3 bulan, omzet toko saya naik 300%. Platform ini benar-benar membantu saya fokus mengembangkan bisnis tanpa harus pusing dengan teknis."
+                        "Saya menyewa dekorasi untuk pernikahan adik saya. Hasilnya sangat memuaskan, tamu-tamu banyak yang bertanya tentang dekorasinya. Terima kasih Jualan Kita"
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            BS
+                            <i class="fas fa-heart"></i>
                         </div>
                         <div class="author-info">
-                            <h4>Budi Santoso</h4>
-                            <p>Pengrajin Kerajinan Tangan</p>
+                            <h4>Uswatun Hasanah</h4>
+                            <p>Pengusaha Muda - Jember</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card fade-in delay-2">
+                    <p class="testimonial-text">
+                        "Barang promosi yang saya pesan untuk kebutuhan pribadi sangat bagus kualitasnya. Desainnya sesuai permintaan dan dikirim tepat waktu. Sangat recommended"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Hendra Wijaya</h4>
+                            <p>Pengusaha Muda - Bondowoso</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in delay-2">
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card fade-in delay-3">
                     <p class="testimonial-text">
-                        "Dukungan dan fitur Jualan Kita luar biasa! Saya bisa mengelola inventaris, pesanan, dan pelanggan dengan mudah dari satu dashboard. Sekarang saya bisa lebih fokus pada pengembangan produk daripada administrasi."
+                        "Figura 3d digital yang saya beli sangat unik dan cantik. Sekarang saya punya 3 jenis untuk pajangan diruang tamu dan kamar"
                     </p>
                     <div class="rating">★★★★★</div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            DL
+                            <i class="fas fa-home"></i>
                         </div>
                         <div class="author-info">
-                            <h4>Dewi Lestari</h4>
-                            <p>Pemilik Brand Fashion Lokal</p>
+                            <h4>Siti Rahayu</h4>
+                            <p>Ibu Rumah Tangga - Sidoarjo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card fade-in delay-4">
+                    <p class="testimonial-text">
+                        "Sebagai wedding planner, saya sering bekerja sama dengan Jualan Kita untuk dekorasi acara. Hasilnya selalu memuaskan dan harganya bersaing"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Vina Permata</h4>
+                            <p>Wedding Planner - Sidoarjo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card fade-in delay-5">
+                    <p class="testimonial-text">
+                        "Sebagai produsen ikan kering premium, saya sangat puas dengan jangkauan pemasaran Lentera Karya. Ikan tongkol dan teri kering kami yang diproses secara tradisional sekarang bisa dinikmati oleh pecinta kuliner sejati di seluruh Indonesia. Pembeli sering kembali karena kualitas yang konsisten! dan yang paling penting - pembeli sangat menghargai keaslian rasa ikan kering tradisional buatan saya. Terima kasih Lentera Karya!"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rufal</h4>
+                            <p>UMKM - Kilensari</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 7 -->
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Saya memesan parcel custom untuk hadiah karyawan. Hasil cetaknya tajam dan tidak mudah luntur. Karyawan saya sangat senang menerimanya"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Linda Amelia</h4>
+                            <p>HR Manager - Malang</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 8 -->
+                <div class="testimonial-card fade-in delay-1">
+                    <p class="testimonial-text">
+                        "Sebagai kolektor seni, saya sangat menghargai karya-karya Jualan Kita. Detail pengerjaannya sangat halus dan menunjukkan keahlian yang tinggi"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Muhammad Dafi</h4>
+                            <p>Kolektor Seni - Besuki</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 9 -->
+                <div class="testimonial-card fade-in delay-2">
+                    <p class="testimonial-text">
+                        "Saya menyewa peralatan fotografi untuk project dokumentasi desa. Peralatannya lengkap dan dalam kondisi sangat baik. Pelayanannya juga ramah"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Maya Sari</h4>
+                            <p>Pelajar - Jangkar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 10 -->
+                <div class="testimonial-card fade-in delay-3">
+                    <p class="testimonial-text">
+                        "Saya oder dan memesan buku edukasi custom hasilnya sangat bagus, dan anak didik saya suka"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Restyana</h4>
+                            <p>Guru - Mlandingan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 11 -->
+                <div class="testimonial-card fade-in delay-4">
+                    <p class="testimonial-text">
+                        "Saya menyewa jasa fotografi untuk project dokumentasi pernikahan saudara. Hasilnya sangat bagus & Pelayanannya juga ramah"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rindy</h4>
+                            <p>Karyawati - Asembagus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 12 -->
+                <div class="testimonial-card fade-in delay-5">
+                    <p class="testimonial-text">
+                        "Berkat Lentera Karya (Jual Kita), promosi kue mocci dan kue basah lainnya saya jadi lebih mudah dijangkau pelanggan. Mereka bisa melihat foto, deskripsi jelas, dan langsung memesan tanpa ribet. Proses transaksinya pun cepat dan aman"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ulink</h4>
+                            <p>Pengusaha Muda - Situbondo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 13 -->
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Sebagai pengrajin batik, saya sangat terbantu dengan platform Jualan Kita. Kini produk saya bisa dijangkau oleh pembeli dari berbagai kota. Omzet meningkat 200% dalam 6 bulan terakhir!"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Dewi Sartika</h4>
+                            <p>Pengrajin Batik - Banyuwangi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 14 -->
+                <div class="testimonial-card fade-in delay-1">
+                    <p class="testimonial-text">
+                        "Saya pemilik warung kopi kecil di Surabaya. Setelah bergabung dengan Jualan Kita, pelanggan saya bertambah banyak. Sekarang bahkan ada yang pesan kopi untuk dikirim ke luar kota!"
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Agus Priyanto</h4>
+                            <p>Pemilik Warung Kopi - Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 15 -->
+                <div class="testimonial-card fade-in delay-2">
+                    <p class="testimonial-text">
+                        "Sebagai penjual keripik singkong, saya sangat puas dengan Jualan Kita. Sistemnya mudah digunakan dan pembayarannya aman. Sekarang saya bisa fokus pada produksi tanpa khawatir tentang pemasaran."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-cookie"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ratna Sari</h4>
+                            <p>Produsen Keripik - Probolinggo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 16 -->
+                <div class="testimonial-card fade-in delay-3">
+                    <p class="testimonial-text">
+                        "Saya menjual produk kecantikan alami. Berkat Jualan Kita, produk saya sekarang dikenal luas. Yang paling saya suka adalah fitur pelacakan pesanan yang memudahkan saya dan pelanggan."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Lina Wijaya</h4>
+                            <p>Produsen Kosmetik Alami - Pasuruan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 17 -->
+                <div class="testimonial-card fade-in delay-4">
+                    <p class="testimonial-text">
+                        "Sebagai petani sayur organik, saya senang bisa langsung terhubung dengan konsumen melalui Jualan Kita. Tidak perlu melalui tengkulak lagi, sehingga harga lebih bersaing dan keuntungan lebih besar."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Bambang Sutrisno</h4>
+                            <p>Petani Organik - Lumajang</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 18 -->
+                <div class="testimonial-card fade-in delay-5">
+                    <p class="testimonial-text">
+                        "Saya membuat kerajinan tangan dari bahan daur ulang. Dulu susah menjualnya, tapi setelah bergabung dengan Jualan Kita, produk saya laris manis! Bahkan ada yang pesan dari luar negeri."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Dian Permatasari</h4>
+                            <p>Pengrajin Daur Ulang - Gresik</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 19 -->
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Sebagai penjual bibit tanaman, Jualan Kita sangat membantu. Sistem pengiriman yang terintegrasi membuat bibit saya sampai dengan aman. Pelanggan pun puas dengan layanan ini."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Haryono</h4>
+                            <p>Penjual Bibit - Mojokerto</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 20 -->
+                <div class="testimonial-card fade-in delay-1">
+                    <p class="testimonial-text">
+                        "Saya menjual produk madu asli dari hutan. Berkat Jualan Kita, sekarang madu saya bisa dinikmati oleh banyak orang di berbagai daerah. Fitur verifikasi produk membuat pelanggan lebih percaya."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-honey-pot"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Joko Santoso</h4>
+                            <p>Peternak Lebah - Trenggalek</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 21 -->
+                <div class="testimonial-card fade-in delay-2">
+                    <p class="testimonial-text">
+                        "Sebagai penjahit rumahan, saya senang bisa menjual produk saya melalui Jualan Kita. Sekarang pesanan datang dari berbagai kota. Fitur kustomisasi ukuran sangat membantu pelanggan saya."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Siti Aminah</h4>
+                            <p>Penjahit - Lamongan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 22 -->
+                <div class="testimonial-card fade-in delay-3">
+                    <p class="testimonial-text">
+                        "Saya menjual kerupuk udang homemade. Dulu hanya dijual di warung sekitar, sekarang bisa menjangkau seluruh Indonesia berkat Jualan Kita. Sistem pembayaran yang mudah membuat bisnis saya berkembang pesat."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-shrimp"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rina Marlina</h4>
+                            <p>Produsen Kerupuk - Tuban</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 23 -->
+                <div class="testimonial-card fade-in delay-4">
+                    <p class="testimonial-text">
+                        "Sebagai pembuat kue kering, Jualan Kita membantu saya mengelola pesanan dengan lebih teratur. Fitur notifikasi memudahkan saya mengetahui pesanan baru tanpa harus terus mengecek."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-cookie-bite"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ani Setiawati</h4>
+                            <p>Pembuat Kue - Bangkalan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 24 -->
+                <div class="testimonial-card fade-in delay-5">
+                    <p class="testimonial-text">
+                        "Saya menjual produk herbal tradisional. Dengan Jualan Kita, produk saya lebih dipercaya karena ada fitur testimoni dan rating. Pelanggan bisa melihat review dari pembeli sebelumnya."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-mortar-pestle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Mbah Kromo</h4>
+                            <p>Penjual Jamu - Ponorogo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 25 -->
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Sebagai pengrajin perak, saya sangat terbantu dengan fitur galeri produk Jualan Kita. Kini karya saya bisa dilihat dengan jelas detailnya. Pembeli pun lebih percaya sebelum memesan."
+                    </p>
+                    <div class="rating">★★★★★</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Wayan Sutrisna</h4>
+                            <p>Pengrajin Perak - Bali</p>
                         </div>
                     </div>
                 </div>
@@ -1231,7 +1635,7 @@
                     <h3>Hubungi Kami</h3>
                     <div class="footer-links">
                         <div class="contact-info-item"><i class="fas fa-phone"></i> +62 878 6561 4222</div>
-                        <div class="contact-info-item"><i class="fas fa-envelope"></i> testimoni@jualankita.com</div>
+                        <div class="contact-info-item"><i class="fas fa-envelope"></i> lenterakaryasitubondo@gmail.com</div>
                         <div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Situbondo, Jawa Timur</div>
                         <div class="contact-info-item"><i class="fas fa-clock"></i> Senin-Sabtu, 08.00-17.00</div>
                     </div>
