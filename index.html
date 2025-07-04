@@ -945,6 +945,25 @@
             color: var(--gold);
         }
         
+        /* Consent Checkbox */
+        .consent-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .consent-checkbox input {
+            width: auto;
+            margin: 0;
+        }
+        
+        .consent-checkbox label {
+            margin: 0;
+            font-weight: 400;
+            color: var(--text);
+        }
+        
         /* Form Status */
         .form-status {
             padding: 1.2rem;
@@ -2215,19 +2234,15 @@
             <div class="testimonial-form-container">
                 <h3>Bagikan Pengalaman Anda</h3>
                 <div id="testimonialFormStatus" class="form-status" style="display: none;"></div>
-                <form id="testimonialForm" action="https://formsubmit.co/lenterakaryasitubondo@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Testimoni Baru dari Website">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    
+                <form id="testimonialForm">
                     <div class="form-group">
-                        <label for="testimonial-name">Nama Anda</label>
+                        <label for="testimonial-name">Nama Lengkap</label>
                         <input type="text" id="testimonial-name" name="name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="testimonial-email">Alamat Email</label>
-                        <input type="email" id="testimonial-email" name="email" required>
+                        <label for="testimonial-phone">Nomor WhatsApp</label>
+                        <input type="tel" id="testimonial-phone" name="phone" required placeholder="Contoh: 628123456789">
                     </div>
                     
                     <div class="form-group">
@@ -2275,12 +2290,14 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="testimonial-photo">Unggah Foto (Opsional)</label>
-                        <input type="file" id="testimonial-photo" name="photo" accept="image/*">
+                        <div class="consent-checkbox">
+                            <input type="checkbox" id="testimonial-consent" name="consent" required>
+                            <label for="testimonial-consent">Saya setuju untuk mengirim testimoni ini melalui WhatsApp kepada admin Lentera Karya</label>
+                        </div>
                     </div>
                     
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Kirim Testimoni
+                        <i class="fas fa-paper-plane"></i> Kirim Testimoni via WhatsApp
                     </button>
                 </form>
             </div>
@@ -2440,15 +2457,13 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>Testimoni Cepat</h2>
-            <form id="quickTestimonialForm" action="https://formsubmit.co/lenterakaryasitubondo@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Testimoni Cepat dari Website">
-                <input type="hidden" name="_captcha" value="false">
+            <form id="quickTestimonialForm">
                 <div class="form-group">
                     <label for="quick-name">Nama Anda</label>
                     <input type="text" id="quick-name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="quick-phone">Nomor Telepon</label>
+                    <label for="quick-phone">Nomor WhatsApp</label>
                     <input type="tel" id="quick-phone" name="phone" required>
                 </div>
                 <div class="form-group">
@@ -2459,8 +2474,14 @@
                     <label for="quick-message">Testimoni Singkat</label>
                     <textarea id="quick-message" name="message" required></textarea>
                 </div>
+                <div class="form-group">
+                    <div class="consent-checkbox">
+                        <input type="checkbox" id="quick-consent" name="consent" required>
+                        <label for="quick-consent">Saya setuju untuk mengirim testimoni ini melalui WhatsApp kepada admin Lentera Karya</label>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i> Kirim Testimoni
+                    <i class="fas fa-paper-plane"></i> Kirim via WhatsApp
                 </button>
             </form>
         </div>
@@ -2742,79 +2763,59 @@
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
             
+            // Validate form
+            const name = form.querySelector('#quick-name').value.trim();
+            const phone = form.querySelector('#quick-phone').value.trim();
+            const product = form.querySelector('#quick-product').value.trim();
+            const message = form.querySelector('#quick-message').value.trim();
+            const consent = form.querySelector('#quick-consent').checked;
+            
+            if (!name || !phone || !product || !message || !consent) {
+                alert('Mohon lengkapi semua field yang wajib diisi dan centang persetujuan');
+                return;
+            }
+            
+            // Validate phone number format
+            if (!/^(\+62|62|0)[0-9]{9,12}$/.test(phone)) {
+                alert('Format nomor WhatsApp tidak valid. Gunakan format 628123456789');
+                return;
+            }
+            
             // Show loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
             
-            // Kirim ke FormSubmit.co (email)
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Kirim ke WhatsApp juga
-                    const name = form.querySelector('#quick-name').value;
-                    const phone = form.querySelector('#quick-phone').value;
-                    const product = form.querySelector('#quick-product').value;
-                    const message = form.querySelector('#quick-message').value;
-                    
-                    const whatsappMessage = `Testimoni Cepat dari Website:\n\nNama: ${name}\nTelepon: ${phone}\nProduk/Layanan: ${product}\nTestimoni: ${message}`;
-                    const encodedWhatsappMessage = encodeURIComponent(whatsappMessage);
-                    
-                    window.open(`https://wa.me/6287865614222?text=${encodedWhatsappMessage}`, '_blank');
-                    
-                    // Reset form
-                    form.reset();
-                    testimonialModal.classList.remove('show');
-                    document.body.style.overflow = '';
-                    
-                    // Tampilkan notifikasi sukses
-                    const formStatus = document.getElementById('testimonialFormStatus');
-                    formStatus.textContent = 'Testimoni Anda telah terkirim. Terima kasih atas masukan berharganya!';
-                    formStatus.className = 'form-status success';
-                    formStatus.style.display = 'block';
-                    
-                    // Scroll ke form status
-                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    throw new Error('Gagal mengirim testimoni');
-                }
-            })
-            .catch(error => {
-                // Jika gagal ke email, coba hanya ke WhatsApp
-                const name = form.querySelector('#quick-name').value;
-                const phone = form.querySelector('#quick-phone').value;
-                const product = form.querySelector('#quick-product').value;
-                const message = form.querySelector('#quick-message').value;
-                
-                const whatsappMessage = `Testimoni Cepat dari Website:\n\nNama: ${name}\nTelepon: ${phone}\nProduk/Layanan: ${product}\nTestimoni: ${message}`;
-                const encodedWhatsappMessage = encodeURIComponent(whatsappMessage);
-                
-                window.open(`https://wa.me/6287865614222?text=${encodedWhatsappMessage}`, '_blank');
-                
-                // Reset form
-                form.reset();
-                testimonialModal.classList.remove('show');
-                document.body.style.overflow = '';
-                
-                // Tampilkan notifikasi sukses
-                const formStatus = document.getElementById('testimonialFormStatus');
-                formStatus.textContent = 'Testimoni Anda telah dikirim melalui WhatsApp. Terima kasih atas masukan berharganya!';
-                formStatus.className = 'form-status success';
-                formStatus.style.display = 'block';
-                
-                // Scroll ke form status
-                formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            })
-            .finally(() => {
-                // Reset button state
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            });
+            // Format WhatsApp message
+            const whatsappMessage = `*TESTIMONI CEPAT PELANGGAN LENTERA KARYA*\n\n` +
+                                  `Nama: ${name}\n` +
+                                  `No. WhatsApp: ${phone}\n` +
+                                  `Produk/Layanan: ${product}\n\n` +
+                                  `*Testimoni*:\n${message}\n\n` +
+                                  `_Testimoni ini dikirim melalui website Lentera Karya_`;
+            
+            const encodedWhatsappMessage = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/message/2A672ZFTMLKBO1?text=${encodedWhatsappMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            form.reset();
+            testimonialModal.classList.remove('show');
+            document.body.style.overflow = '';
+            
+            // Show success message
+            const formStatus = document.getElementById('testimonialFormStatus');
+            formStatus.textContent = 'Terima kasih! Testimoni Anda sedang dikirim melalui WhatsApp. Silakan selesaikan pengiriman di aplikasi WhatsApp.';
+            formStatus.className = 'form-status success';
+            formStatus.style.display = 'block';
+            
+            // Scroll to form status
+            formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
             
             playButtonSound();
         });
@@ -2830,16 +2831,25 @@
             // Reset status
             formStatus.style.display = 'none';
             
-            // Validasi form
+            // Validate form
             const name = document.getElementById('testimonial-name').value.trim();
-            const email = document.getElementById('testimonial-email').value.trim();
+            const phone = document.getElementById('testimonial-phone').value.trim();
             const profession = document.getElementById('testimonial-profession').value.trim();
             const location = document.getElementById('testimonial-location').value.trim();
             const category = document.getElementById('testimonial-category').value;
             const message = document.getElementById('testimonial-message').value.trim();
+            const consent = document.getElementById('testimonial-consent').checked;
             
-            if (!name || !email || !profession || !location || !category || !message) {
-                formStatus.textContent = 'Mohon lengkapi semua field yang wajib diisi';
+            if (!name || !phone || !profession || !location || !category || !message || !consent) {
+                formStatus.textContent = 'Mohon lengkapi semua field yang wajib diisi dan centang persetujuan';
+                formStatus.className = 'form-status error';
+                formStatus.style.display = 'block';
+                return;
+            }
+            
+            // Validate phone number format
+            if (!/^(\+62|62|0)[0-9]{9,12}$/.test(phone)) {
+                formStatus.textContent = 'Format nomor WhatsApp tidak valid. Gunakan format 628123456789';
                 formStatus.className = 'form-status error';
                 formStatus.style.display = 'block';
                 return;
@@ -2849,53 +2859,34 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
             
-            // Kirim ke FormSubmit.co (email)
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Kirim ke WhatsApp juga
-                    const whatsappMessage = `*Testimoni Baru dari Website*:\n\nNama: ${name}\nProfesi: ${profession}\nLokasi: ${location}\nKategori: ${document.getElementById('testimonial-category').options[document.getElementById('testimonial-category').selectedIndex].text}\nRating: ${form.querySelector('input[name="rating"]:checked').value} bintang\nTestimoni: ${message}`;
-                    const encodedWhatsappMessage = encodeURIComponent(whatsappMessage);
-                    
-                    window.open(`https://wa.me/6287865614222?text=${encodedWhatsappMessage}`, '_blank');
-                    
-                    // Tampilkan pesan sukses
-                    formStatus.textContent = 'Terima kasih! Testimoni Anda telah terkirim. Kami sangat menghargai masukan Anda.';
-                    formStatus.className = 'form-status success';
-                    formStatus.style.display = 'block';
-                    
-                    // Reset form
-                    form.reset();
-                } else {
-                    throw new Error('Gagal mengirim ke email');
-                }
-            })
-            .catch(error => {
-                // Jika gagal ke email, coba hanya ke WhatsApp
-                const whatsappMessage = `*Testimoni Baru dari Website*:\n\nNama: ${name}\nProfesi: ${profession}\nLokasi: ${location}\nKategori: ${document.getElementById('testimonial-category').options[document.getElementById('testimonial-category').selectedIndex].text}\nRating: ${form.querySelector('input[name="rating"]:checked').value} bintang\nTestimoni: ${message}`;
-                const encodedWhatsappMessage = encodeURIComponent(whatsappMessage);
-                
-                window.open(`https://wa.me/6287865614222?text=${encodedWhatsappMessage}`, '_blank');
-                
-                // Tampilkan pesan sukses
-                formStatus.textContent = 'Testimoni Anda telah dikirim melalui WhatsApp. Kami sangat menghargai masukan Anda.';
-                formStatus.className = 'form-status success';
-                formStatus.style.display = 'block';
-                
-                // Reset form
-                form.reset();
-            })
-            .finally(() => {
-                // Reset button state
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            });
+            // Format WhatsApp message
+            const whatsappMessage = `*TESTIMONI PELANGGAN LENTERA KARYA*\n\n` +
+                                  `Nama: ${name}\n` +
+                                  `No. WhatsApp: ${phone}\n` +
+                                  `Profesi: ${profession}\n` +
+                                  `Lokasi: ${location}\n` +
+                                  `Kategori: ${document.getElementById('testimonial-category').options[document.getElementById('testimonial-category').selectedIndex].text}\n` +
+                                  `Rating: ${form.querySelector('input[name="rating"]:checked').value} bintang\n\n` +
+                                  `*Testimoni*:\n${message}\n\n` +
+                                  `_Testimoni ini dikirim melalui website Lentera Karya_`;
+            
+            const encodedWhatsappMessage = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/message/2A672ZFTMLKBO1?text=${encodedWhatsappMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success message
+            formStatus.textContent = 'Terima kasih! Testimoni Anda sedang dikirim melalui WhatsApp. Silakan selesaikan pengiriman di aplikasi WhatsApp.';
+            formStatus.className = 'form-status success';
+            formStatus.style.display = 'block';
+            
+            // Reset form
+            form.reset();
+            
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
             
             playButtonSound();
         });
